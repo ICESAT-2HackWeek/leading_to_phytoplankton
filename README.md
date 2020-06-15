@@ -2,6 +2,19 @@
 
 This is as an example on how teams can structure their project repositories. Thanks to Lindsey Heagey and Joachim Meyer for the template, provided originally for [Geohackweek](https://github.com/geohackweek/sample_project_repository).
 
+### Goals
+
+1. Create a tool for identifying (near) co-indicdent measurements across varied datasets(specifically with Argo float data, MODIS and/or Sentinel imagery, and ICESat-2 tracks)
+
+2. Formulate scripts to develop or isolate parameters from ATL03 data that might be relevant to larger science questions for which the above measurements are relevant
+
+3. Become Python gods. 
+
+### other notes
+
+We would like to have 2 Notebooks as deliverables and a clear use-case story. We hope to develop some pretext for a potential GUI by incorporating widgets into the co-incident measurements tool. 
+
+
 ## Files
 
 * `.gitignore`
