@@ -3,7 +3,7 @@ getOC
 
 _Bulk download Ocean Color images._
 
-getOC is a python utility in command line to easily bulk download Ocean Color images from [NASA Ocean Data](https://oceandata.sci.gsfc.nasa.gov/cgi/getfile/) API. Provide a list of positions and dates in a csv file (ex: test.csv), select an instrument (MODIS, VIIRS, OLCI, SeaWiFS), a processing level (L1A, L2, L3BIN, L3SMI), and a product type and getOC will get the images. Usage examples:
+getOC is a python utility in command line to easily bulk download Ocean Color images from [NASA Ocean Data](https://oceandata.sci.gsfc.nasa.gov/cgi/getfile/) API. It was developed by Nils Haenjens at the University of Maine. Provide a list of positions and dates in a csv file (ex: test.csv), select an instrument (MODIS, VIIRS, OLCI, SeaWiFS), a processing level (L1A, L2, L3BIN, L3SMI), and a product type and getOC will get the images. Usage examples:
 
     python -m getOC -i <instrument> -l L1A <filename> -u <earthdata-username>
     python -m getOC -i <instrument> -l L2 -p <product> <filename>  -u <earthdata-username>
