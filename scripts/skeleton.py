@@ -9,7 +9,7 @@ class colocateddata:
         time_end: datetime object
         '''
         self.bounding_box = boundingbox
-        self.time_frame = timeframe
+        self.time_frame = [time_start, time_end]
     
     
 class IceSat2(colocateddata):
