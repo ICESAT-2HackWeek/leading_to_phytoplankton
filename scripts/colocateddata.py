@@ -43,12 +43,14 @@ class Colocateddata:
     
     
     def _add_dataset(self, dataset_name):
+        '''
+        Adds dataset objcet to dataset dictionary
+        '''
         
         if dataset_name == 'ATL03':
             self.datasets[dataset_name] = ATL03(self.bounding_box, self.time_frame)
-            print('ATL03')
         elif dataset_name == 'ATL07':
-            print('ATL07')
+            self.datasets[dataset_name] = ATL07(self.bounding_box, self.time_frame)
         else:
             print('Error: {0} is not a supported dataset'.format(dataset_name))
             print('Permitted datasets are \n\tATL03, ATL07')
