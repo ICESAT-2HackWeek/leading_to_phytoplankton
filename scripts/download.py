@@ -12,7 +12,7 @@ def download(bbox, timeframe, beam, earthdata_uid, email):
     
     print(region.avail_granules())
     if ('y' or 'yes' == input("Here's what we've got! Continue? (y/n)")):
-        region.earthdata_login()
+        region.earthdata_login(earthdata_uid, email)
         
         path = './download/' + short_name
         region.download_granules(path)

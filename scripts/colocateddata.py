@@ -5,7 +5,7 @@ class Colocateddata:
     
     def __init__(self, boundingbox, time_start, time_end):
         '''
-        boundingbox: [lat1, lon1, lat2, lon2]
+        boundingbox: [lon1, lon2, lat1, lat2]
         time_start: datetime object
         time_end: datetime object
         '''
