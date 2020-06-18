@@ -47,8 +47,9 @@ prevent conflicts when merging with master.
 
 ### `notebooks`
 
-The project presentation is *'presentation.ipynb'*
-Other visualization notebooks and sanboxes for scrap work are included.
+The project presentation is *'presentation.ipynb'*    
+
+Other visualization notebooks and sandboxes for scrap work are included.
 
 ### `scripts`
 These include download scripts for ICESat-2, sentinel -2, MODIS, VIIRS, SeaWiFS. Argo download scripts are not included because at this time it is not possible to search an API for synthetic biogeochemical floats around a bounding box and time. Future development will include these tools and others. Colocated data scripts are included as well as basic scripts to interpret ATL03 and ATL07 attributes.
