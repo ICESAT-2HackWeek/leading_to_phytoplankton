@@ -30,6 +30,7 @@ class Colocateddata:
         return str
         
     def show_area_overlap(self):
+        print('This will show all of the data overlapping on the same axes')
         pass
     
     def init_dataset(self, dataset_list):
