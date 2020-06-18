@@ -1,5 +1,6 @@
 
-def search_sentinels(df, aoi, dt=2, proj_string='+init=EPSG:3995',
+def search_sentinels(df, aoi, dt=2, user=None, pwd=None,
+                     proj_string='+init=EPSG:3995',
                      f_out=None, min_cloud_cover=0,
                      max_cloud_cover=100, product_type='S2MSI1C'):
     """
@@ -85,8 +86,8 @@ def search_sentinels(df, aoi, dt=2, proj_string='+init=EPSG:3995',
 
     ### Read metadata
     print("Query for metadata...")
-    api = SentinelAPI('adia', 'ImageSearchTool2020',
-                      'https://scihub.copernicus.eu/dhus', timeout=600)
+    api = SentinelAPI(user, pwd,'https://scihub.copernicus.eu/dhus',
+                      timeout=600)
     md  = api.query(area=aoi, date=(t_is2_start.datetime, t_is2_stop.datetime),
                     platformname='Sentinel-2', area_relation='Intersects',
                     cloudcoverpercentage=(min_cloud_cover, max_cloud_cover),
