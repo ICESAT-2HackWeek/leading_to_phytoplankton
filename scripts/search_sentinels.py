@@ -1,32 +1,40 @@
 
-def search_sentinels(df, aoi, dt=2, user=None, pwd=None,
-                     proj_string='+init=EPSG:3995',
-                     f_out=None, min_cloud_cover=0,
-                     max_cloud_cover=100, product_type='S2MSI1C'):
+def search_sentinels(platform_name, df, aoi, dt=2, user=None, pwd=None,
+                     proj_string='+init=EPSG:3995', product_type=None,
+                     min_cloud_cover=0, max_cloud_cover=100,
+                     swath_type=None, f_out=None):
     """
-    Search Sentinel images overlapping ICESat-2 data within +- dt
+    Search Sentinel-1/2 images overlapping ICESat-2 data within +- dt
 
-    Parameters: (to be finished!)
+    Parameters:
     -----------
+    platform_name : str ['Sentinel-1 | Sentinel-2']
+        name of the platform for which images will be searched
     df : panda dataframe
         ICESat-2 data
     aoi: str, list
-        area of interest as WKT string or bounding box [lllon, lllat, urlon, urlat]
+        area of interest as WKT string or bounding box[lllon, lllat, urlon, urlat]
     dt: int, float
         difference in hours between CS2 and S2
+    user : str
+        username to connect to the Copernicus Scientific Hub
+    pwd : str
+        password to connect to the Copernicus Scientific Hub
     proj_string: str
         projection string to be used with the pyproj module
+    product_type : str
+        name of the type of product to be searched (more info at https://scihub.copernicus.eu/userguide/)
+    swath_type : str
+        name of the type of swath to be searched (Sentinel-1 only, more info at https://scihub.copernicus.eu/userguide/)
     min_cloud_cover: int, float
-        Minimum cloud coverage in percentage
+        Minimum cloud coverage in percentage (Sentinel-2 only)
     max_cloud_cover: int, float
-        Maximum cloud coverage in percentage
+        Maximum cloud coverage in percentage (Sentinel-2 only)        
+    f_out : str
+        path to file where to write results
 
 
-    Old:
-    f_out:              str
-        file name where to write the results
-
-    Returns:
+    Returns: (to be finished!)
     --------
 
     """
@@ -58,6 +66,19 @@ def search_sentinels(df, aoi, dt=2, user=None, pwd=None,
     else:
         print("ERROR: 'aoi' should be provided as a WKT string or bounding box (list)")
         sys.exit(1)
+        
+    ### Check input parameters
+    if product_type == None:
+        if platform_name == 'Sentinel-1':
+            product_type    = 'GRD'
+            print("product_type set to: ", product_type)
+        if platform_name == 'Sentinel-2':
+            product_type    = 'S2MSI1C'
+            print("product_type set to: ", product_type)
+    if swath_type == None and platform_name == 'Sentinel-1':
+            swath_type      = 'EW'
+            print("swath_type set to: ", swath_type)             
+    
     # project coordinates and convert to shapely polygon
     x, y        = proj(aoi_temp.exterior.xy[0], aoi_temp.exterior.xy[1])
     aoi_poly    = sg.Polygon(list(zip(x, y)))
@@ -88,10 +109,15 @@ def search_sentinels(df, aoi, dt=2, user=None, pwd=None,
     print("Query for metadata...")
     api = SentinelAPI(user, pwd,'https://scihub.copernicus.eu/dhus',
                       timeout=600)
-    md  = api.query(area=aoi, date=(t_is2_start.datetime, t_is2_stop.datetime),
-                    platformname='Sentinel-2', area_relation='Intersects',
-                    cloudcoverpercentage=(min_cloud_cover, max_cloud_cover),
-                    producttype=product_type)
+    if platform_name == 'Sentinel-1':
+        md  = api.query(area=aoi, date=(t_is2_start.datetime, t_is2_stop.datetime),
+                        platformname='Sentinel-1', area_relation='Intersects',
+                        producttype=product_type, sensoroperationalmode=swath_type)
+    elif platform_name == 'Sentinel-2':
+        md  = api.query(area=aoi, date=(t_is2_start.datetime, t_is2_stop.datetime),
+                        platformname='Sentinel-2', area_relation='Intersects',
+                        cloudcoverpercentage=(min_cloud_cover, max_cloud_cover),
+                        producttype=product_type)
     print("N. of total images: {}".format(len(md)))
     if len(md) == 0:
         return [], [], [], [], [], []
