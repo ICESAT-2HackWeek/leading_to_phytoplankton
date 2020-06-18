@@ -6,18 +6,31 @@ ICESat-2 Hackweek
 # Team Members
 
 Nicole Abib  
+
 Kelsey Bisson   
+
 Alessandro Di Bella   
-Ted Maksym   
-Romina Piunno
-Rachel Tilling
-Molly Wieringa 
+
+Ted Maksym     
+
+Romina Piunno     
+
+
+Rachel Tilling      
+
+
+Molly Wieringa       
+
+
 
 Thanks to Lindsey Heagey and Joachim Meyer for the template, provided originally for [Geohackweek](https://github.com/geohackweek/sample_project_repository).
 
 ### Goals
 
-Hackweek Goal: Query, Download, and Visualize coincident ICESat-2, Sentinel-2, and Argo Float data. 
+Hackweek Goal: Query, Download, and Visualize coincident ICESat-2, Sentinel-2, and Argo Float data.     
+
+
+
 Long term goal: Create a package that will download data of interest for a specified time period and bounding box to study changing ice-ocean interactions & properties. This package will be modular so that other data products can easily be incorporated. 
 
 Specific goals: 
