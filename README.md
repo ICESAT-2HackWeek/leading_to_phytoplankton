@@ -5,21 +5,15 @@ ICESat-2 Hackweek
 
 # Team Members
 
-Nicole Abib  
+#Nicole Abib  
+#Kelsey Bisson   
+#Alessandro Di Bella   
+#Ted Maksym     
+#Romina Piunno     
 
-Kelsey Bisson   
+#Rachel Tilling      
 
-Alessandro Di Bella   
-
-Ted Maksym     
-
-Romina Piunno     
-
-
-Rachel Tilling      
-
-
-Molly Wieringa       
+#Molly Wieringa       
 
 
 
@@ -52,8 +46,6 @@ work on their contribution. Having a dedicated folder for one-self helps to
 prevent conflicts when merging with master.
 
 ### `notebooks`
-Notebooks that are considered delivered results for the project should go in
-here.
 
 The project presentation is 'presentation.ipynb'
 Other visualization notebooks and sanboxes for scrap work are included.
