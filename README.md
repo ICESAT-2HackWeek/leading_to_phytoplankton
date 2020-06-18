@@ -21,11 +21,11 @@ Thanks to Lindsey Heagey and Joachim Meyer for the template, provided originally
 
 ### Goals
 
-Hackweek Goal: Query, Download, and Visualize coincident ICESat-2, Sentinel-2, and Argo Float data.     
+**Hackweek Goal**: Query, Download, and Visualize coincident ICESat-2, Sentinel-2, and Argo Float data.     
 
 
 
-Long term goal: Create a package that will download data of interest for a specified time period and bounding box to study changing ice-ocean interactions & properties. This package will be modular so that other data products can easily be incorporated. 
+**Long term goal**: Create a package that will download data of interest for a specified time period and bounding box to study changing ice-ocean interactions & properties. This package will be modular so that other data products can easily be incorporated. 
 
 Specific goals: 
 1. Create a tool for identifying (near) co-indicdent measurements across varied datasets(specifically with Argo float data, MODIS and/or Sentinel imagery, and ICESat-2 tracks)
@@ -47,7 +47,7 @@ prevent conflicts when merging with master.
 
 ### `notebooks`
 
-The project presentation is 'presentation.ipynb'
+The project presentation is *'presentation.ipynb'*
 Other visualization notebooks and sanboxes for scrap work are included.
 
 ### `scripts`
