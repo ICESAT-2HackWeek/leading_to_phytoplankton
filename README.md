@@ -5,15 +5,15 @@ ICESat-2 Hackweek
 
 # Team Members
 
-#Nicole Abib  
-#Kelsey Bisson   
-#Alessandro Di Bella   
-#Ted Maksym     
-#Romina Piunno     
+- Nicole Abib  
+- Kelsey Bisson   
+- Alessandro Di Bella   
+- Ted Maksym     
+- Romina Piunno     
 
-#Rachel Tilling      
+- Rachel Tilling      
 
-#Molly Wieringa       
+- Molly Wieringa       
 
 
 
