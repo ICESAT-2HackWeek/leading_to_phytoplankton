@@ -49,29 +49,54 @@ class Colocateddata:
         return str
         
     def show_area_overlap(self, show_datasets=None, porj='NorthPolarStereo'):
-        ds2plot = []
-        if show_datasets:
-            ds2plot = show_datasets
-        else:
-            ds2plot = self.datasets
 
-        # settings for plots that are common to all figures
-        # ...
+        # todo: initialize the figure
+        # eg. - specify figure properties, and set appropriate proj.
+        # add in things like coast lines, etc.
+        # things that are common to all datasets within the bounding box
+        # below is some sample code
+        # plt.figure(figsize=(8, 8), dpi=600)
+        # ax = plt.axes(projection=ccrs.NorthPolarStereo(central_longitude=0))  # choose polar sterographic for projection
+        # ax.coastlines(resolution='50m', color='black', linewidth=1)
+        # ax.set_extent([-180, 180, 60, 90], ccrs.PlateCarree())
 
-        plt.figure(figsize=(8, 8), dpi=600)
-        if self.projection == 'NorthPolarStereographic':
-            ax = plt.axes(projection=ccrs.NorthPolarStereo(central_longitude=0))  # choose polar sterographic for projection
-        elif self.projection == 'Mercator':
-            ax = plt.axes(projection=ccrs.Mercator(central_longitude=0))  # choose polar sterographic for projection
+        '''
+        in the above sample 'ax' is the handle (pointer/reference to where the
+        figure properties are saved in memory)
+        - we want to pass this reference to each specific dataset so that it
+        can add in the appropriate plot onto the same set of axes
+        '''
 
-        ax.coastlines(resolution='50m', color='black', linewidth=1)
+        # todo: iterate over each dataset in the instance of colocated data, and add plot to the set of axes
 
-        for i in ds2plot:
-            # call individual plot functions from each dataset object
-            pass
+        for i in self.datasets:
+            i._add2colocated_plot()
 
+        plt.show()
 
-        print('This will show all of the data overlapping on the same axes')
+        # ds2plot = []
+        # if show_datasets:
+        #     ds2plot = show_datasets
+        # else:
+        #     ds2plot = self.datasets
+        #
+        # # settings for plots that are common to all figures
+        # # ...
+        #
+        # plt.figure(figsize=(8, 8), dpi=600)
+        # if self.projection == 'NorthPolarStereographic':
+        #     ax = plt.axes(projection=ccrs.NorthPolarStereo(central_longitude=0))  # choose polar sterographic for projection
+        # elif self.projection == 'Mercator':
+        #     ax = plt.axes(projection=ccrs.Mercator(central_longitude=0))  # choose polar sterographic for projection
+        #
+        # ax.coastlines(resolution='50m', color='black', linewidth=1)
+        #
+        # for i in ds2plot:
+        #     # call individual plot functions from each dataset object
+        #     pass
+        #
+        #
+        # print('This will show all of the data overlapping on the same axes')
         pass
     
     def init_dataset(self, dataset_list):

@@ -43,4 +43,5 @@ class DataSet:
     def get_roughness(self):
         raise NotImplementedError
     
-    
+    def _add2colocated_plot(self):
+        raise NotImplementedError
