@@ -1,5 +1,7 @@
-from dataset_scripts import *
+from .dataset_scripts import *
 import matplotlib.pyplot as plt
+
+from .dataset_scripts.atl07 import ATL07
 
 
 class Colocateddata:
@@ -21,10 +23,11 @@ class Colocateddata:
             # based on the bounding box specified, determine an appropriate projection
             if min(self.bounding_box[2], self.bounding_box[3]) > 30:
                 return 'NorthPolarStereographic'
-            elif:
+            elif proj == 'NorthPolarStereo':
+                pass
                 # todo: check other regions for most appropriate proj
                 #  ...
-                pass
+
         else:
             # todo: check that user entered valid proj name
             return proj
@@ -99,5 +102,5 @@ class Colocateddata:
 
 
 
-dat = Colocateddata([1,2,3,4], yesterday, today)
-dat.init_dataset([ATL03])
+# dat = Colocateddata([1,2,3,4], yesterday, today)
+# dat.init_dataset([ATL03])

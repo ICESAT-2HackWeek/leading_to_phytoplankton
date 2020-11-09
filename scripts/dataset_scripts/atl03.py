@@ -28,7 +28,9 @@ class ATL03(DataSet):
         return rd.getATL03(is2_f,beam)
         
         
-    
+    def _add2plot(self, ax):
+        pass
+
     def visualize(self):
         
         var= 'heights' #choose which variable we want to plot

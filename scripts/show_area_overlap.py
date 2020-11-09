@@ -17,7 +17,7 @@ import numpy as np
 from astropy.time import Time
 import matplotlib.pyplot as plt
 import h5py, pyproj
-import readers as rd
+import reader as rd
 import cartopy.crs as ccrs
 import rasterio
 from rasterio.plot import show

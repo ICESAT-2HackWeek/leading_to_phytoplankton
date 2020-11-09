@@ -10,7 +10,7 @@ from astropy.time import Time
 import sys  
 
 sys.path.insert(0, '/home/jovyan/leading_to_phytoplankton/scripts')
-import readers as rd
+import reader as rd
 
 class DataSet:
     
@@ -24,7 +24,10 @@ class DataSet:
         self.bounding_box = boundingbox
         self.time_frame = timeframe
         
-    
+
+    def search_data(self, delta_t):
+        raise NotImplementedError
+
     def visualize(self):
         raise NotImplementedError
     
