@@ -21,9 +21,24 @@ class DataSet:
     '''
     
     def __init__(self, boundingbox, timeframe):
+        '''
+        :param timeframe: datetime
+        '''
         self.bounding_box = boundingbox
         self.time_frame = timeframe
         
+    def _fmt_coordinates(self):
+        # use icepyx geospatial module (icepyx core)
+        raise NotImplementedError
+
+    def _fmt_timerange(self):
+        '''
+        will return list of datetime objects [start_time, end_time]
+        '''
+        raise NotImplementedError
+
+    def _validate_input(self):
+        raise NotImplementedError
 
     def search_data(self, delta_t):
         raise NotImplementedError
