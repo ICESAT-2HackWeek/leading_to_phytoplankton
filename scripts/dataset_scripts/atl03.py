@@ -7,9 +7,7 @@ class ATL03(DataSet):
         self.df = self._read_in_dat()
     
     def _read_in_dat(self):
-        
         temp_dloc = '/home/jovyan/'
-        is2_fn = 'ATL03_20190812180506_06970410_003_01.h5'
         path  = 'shared/leading_to_phytoplankton/IS2_S2/ATL03_20190805215948_05930404_002_02.h5'
         
         is2_f = h5py.File(temp_dloc+path, 'r') # read hdf5 file

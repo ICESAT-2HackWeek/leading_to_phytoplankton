@@ -49,7 +49,7 @@ class DataSet:
     def download(self, out_path):
         raise NotImplementedError
     
-    def get_meltpond_frcation(self):
+    def get_meltpond_fraction(self):
         raise NotImplementedError
     
     def get_sea_ice_fraction(self):

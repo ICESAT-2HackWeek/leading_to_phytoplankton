@@ -1,5 +1,6 @@
 from .dataset_scripts import *
 import matplotlib.pyplot as plt
+from icepyx import Query
 
 from .dataset_scripts.atl07 import ATL07
 
