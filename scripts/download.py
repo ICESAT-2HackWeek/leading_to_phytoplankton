@@ -1,13 +1,13 @@
 def download(bbox, timeframe, beam, earthdata_uid, email): 
     
     import os
-    from icepyx import icesat2data as ipd
+    import icepyx as ipx
     from icepyx import core
     import readers as rd
     
     short_name = ATL03 '''fill in with name of whichever DataSet this is a member function of'''
     
-    region.ipd.Icesat2Data(short_name, bbox, timeframe)
+    region = ipx.Query(short_name, bbox, timeframe)
     region.avail_granules()
     
     print(region.avail_granules())
