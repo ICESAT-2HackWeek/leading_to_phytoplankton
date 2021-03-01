@@ -12,7 +12,7 @@ from icepyx import Query as ipd
 
 def getATL03(f,beam):
     # height of each received photon, relative to the WGS-84 ellipsoid (with some, not all corrections applied, see background info above)
-    heights=f[beam +'/heights']['h_ph'][:]
+    heights=f[beam+'/heights/h_ph'][:]
     # latitude (decimal degrees) of each received photon
     lats=f[beam]['heights']['lat_ph'][:]
     # longitude (decimal degrees) of each received photon
