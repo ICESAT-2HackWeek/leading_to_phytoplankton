@@ -4,7 +4,8 @@ from icepyx import Query
 
 from .dataset_scripts.atl07 import ATL07
 
-
+# Colocated data is a sub-class if SuperQuery
+# todo: implement the subclass inheritance
 class Colocateddata:
     
     def __init__(self, boundingbox, time_start, time_end, proj='Default'):
@@ -19,6 +20,7 @@ class Colocateddata:
         self.datasets = {}
         self.projection = self._determine_proj(proj)
 
+    # todo: maybe move this to Icepyx superquery class
     def _determine_proj(self, proj):
         if proj == 'Default':
             # based on the bounding box specified, determine an appropriate projection

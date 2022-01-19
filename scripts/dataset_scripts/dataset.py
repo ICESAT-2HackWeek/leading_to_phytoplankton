@@ -27,7 +27,7 @@ class DataSet:
         '''
         self.bounding_box = boundingbox
         self.time_frame = timeframe
-        
+
     def _fmt_coordinates(self):
         # use icepyx geospatial module (icepyx core)
         raise NotImplementedError
@@ -38,6 +38,7 @@ class DataSet:
         '''
         raise NotImplementedError
 
+    # todo: merge with Icepyx SuperQuery
     def _validate_input(self):
         '''
         This may already be done in icepyx.
@@ -84,13 +85,13 @@ class DataSet:
     all datasets. 
     '''
 
-    def get_meltpond_fraction(self):
-        raise NotImplementedError
-    
-    def get_sea_ice_fraction(self):
-        raise NotImplementedError
-    
-    def get_roughness(self):
-        raise NotImplementedError
+    # def get_meltpond_fraction(self):
+    #     raise NotImplementedError
+    #
+    # def get_sea_ice_fraction(self):
+    #     raise NotImplementedError
+    #
+    # def get_roughness(self):
+    #     raise NotImplementedError
     
 
